@@ -7,7 +7,7 @@ var returnRouter = function(io) {
   io.on('connection', function(socket) {
     totalConnections++;
     console.log('Socket connection initialized. Currently (' + totalConnections + ') Connected.');
-    socket.on('disconnect', function() {
+    socket.on('disconnect', function(res) {
       totalConnections--;
       console.log('Socket connection closed. Currently (' + totalConnections + ') Connected.');
     });
